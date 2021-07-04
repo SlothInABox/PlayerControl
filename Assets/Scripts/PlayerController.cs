@@ -13,19 +13,13 @@ public class PlayerController : MonoBehaviour
     public KeyCode switchKey;
 
     // Speed variable
-    public float speed = 20.0f;
+    [SerializeField] private float speed = 20.0f;
     // Turnspeed
-    public float turnSpeed = 45.0f;
+    [SerializeField] private float turnSpeed = 45.0f;
 
     // Movement inputs
     public float horizontalInput;
     public float forwardInput;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private void SwitchView()
     {
@@ -35,7 +29,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         horizontalInput = Input.GetAxis("Horizontal" + inputID);
         forwardInput = Input.GetAxis("Vertical" + inputID);
